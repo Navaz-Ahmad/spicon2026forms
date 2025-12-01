@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import logo from "./Assests/logo.PNG";
 import { useNavigate } from "react-router-dom";
+import EastRayaUPI from "./Assests/eastrayalaseemaupi.png";
+
 
 export default function EastRegistration() {
   const navigate = useNavigate();
@@ -525,7 +527,36 @@ export default function EastRegistration() {
           </>
         )}
 
-        {/* PAYMENT DETAILS */}
+    
+        <div className="col-12 mt-4">
+         <hr className="mb-3" />
+         <h5 className="fw-bold mb-3">Account Details (EAST)</h5>
+
+         <div className="p-3" style={{ background: "#f8f9fa", borderRadius: "5px" }}>
+           <p className="mb-2"><strong>Account Holder Name :</strong> Janga Sumalatha</p>
+           <p className="mb-2"><strong>Account No :</strong> 62112258352</p>
+           <p className="mb-2"><strong>IFSC Code :</strong> SBIN0021040</p>
+           <p className="mb-2"><strong>Branch Name :</strong> SBI-NAIDUPET</p>
+           <p className="mb-2"><strong>Phone Pay Number :</strong> 9885108525</p>
+
+           {/* UPI Scanner Image */}
+           <div className="text-center mt-3">
+             <img 
+               src={EastRayaUPI} 
+               alt="UPI Scanner" 
+               style={{ width: "200px", borderRadius: "10px" }} 
+             />
+             <p className="mt-2">Scan this UPI QR to make the payment</p>
+           </div>
+         </div>
+ 
+         <hr className="mt-4" />
+        </div>
+
+        <p className="text-danger fw-bold mt-3">
+  NOTE: Minimum 50% of the total amount must be paid for the registration to be accepted.
+</p>
+                {/* PAYMENT DETAILS */}
         <div className="col-md-6">
           <label className="form-label">Amount Paid *</label>
           <input
@@ -537,23 +568,8 @@ export default function EastRegistration() {
           />
         </div>
         
-        {/* --- ACCOUNT DETAILS SECTION (EAST) --- */}
-        <div className="col-12 mt-4">
-          <hr className="mb-3" />
-          <h5 className="fw-bold mb-3">Account Details (EAST)</h5>
-          
-          <div className="p-3" style={{ background: "#f8f9fa", borderRadius: "5px" }}>
-            <p className="mb-2"><strong>Account Holder Name :</strong> Janga Sumalatha</p>
-            <p className="mb-2"><strong>Account No :</strong> 62112258352</p>
-            <p className="mb-2"><strong>IFSC Code :</strong> SBIN0021040</p>
-            <p className="mb-2"><strong>Branch Name :</strong> SBI-NAIDUPET</p>
-            <p className="mb-2"><strong>Phone Pay Number :</strong> 9885108525</p>
-          </div>
-
-          <hr className="mt-4" />
-        </div>
-        {/* --- END OF NEW SECTION --- */}       
-
+        
+        
         <div className="col-md-6">
           <label className="form-label">Mode of Payment *</label>
           <select

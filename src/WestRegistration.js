@@ -526,17 +526,7 @@ export default function SPICONRegistration() {
           </>
         )}
 
-        {/* PAYMENT DETAILS */}
-        <div className="col-md-6">
-          <label className="form-label">Amount Paid *</label>
-          <input
-            name="amountPaid"
-            className="form-control"
-            value={form.amountPaid}
-            onChange={handle}
-            required
-          />
-        </div>
+
         {/* --- NEW ACCOUNT DETAILS SECTION ADDED HERE --- */}
         <div className="col-12 mt-4">
           <hr className="mb-3" />
@@ -553,8 +543,22 @@ export default function SPICONRegistration() {
 
           <hr className="mt-4" />
         </div>
-        {/* --- END OF NEW SECTION --- */}        66
+        {/* --- END OF NEW SECTION --- */}        
 
+        <p className="text-danger fw-bold mt-3">
+  NOTE: Minimum 50% of the total amount must be paid for the registration to be accepted.
+</p>
+                {/* PAYMENT DETAILS */}
+        <div className="col-md-6">
+          <label className="form-label">Amount Paid *</label>
+          <input
+            name="amountPaid"
+            className="form-control"
+            value={form.amountPaid}
+            onChange={handle}
+            required
+          />
+        </div>
         <div className="col-md-6">
           <label className="form-label">Mode of Payment *</label>
           <select
