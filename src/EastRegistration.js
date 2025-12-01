@@ -1,10 +1,9 @@
-// SPICON 2026 — Dynamic Registration Form (FULL VERSION)
-// Bootstrap 5 + React + Fully Dynamic Logic
-
 import React, { useState } from "react";
 import logo from "./Assests/logo.PNG";
+import { useNavigate } from "react-router-dom";
 
-export default function SPICONRegistration() {
+export default function EastRegistration() {
+  const navigate = useNavigate();
   const initial = {
     email: "",
     title: "",
@@ -62,10 +61,15 @@ export default function SPICONRegistration() {
     const fd = new FormData();
     Object.entries(form).forEach(([k, v]) => fd.append(k, v));
     if (screenshot) fd.append("paymentScreenshot", screenshot);
+    
+    // IMPORTANT: Identifier for East Region
+    fd.append("region", "East Rayalaseema"); 
 
     setLoading(true);
 
     try {
+      // NOTE: Using the same API endpoint for now. 
+      // If East Rayalaseema has a different API, change the URL below.
       const res = await fetch(
         "http://13.234.197.201:5000/api/cashier/registerCustomer",
         {
@@ -93,6 +97,9 @@ export default function SPICONRegistration() {
 
   return (
     <div className="container py-4">
+      <button className="btn btn-outline-secondary mb-3" onClick={() => navigate("/")}>
+         &larr; Back to Home
+      </button>
 
       {/* SUCCESS / ERROR MESSAGE */}
       {message && (
@@ -105,7 +112,7 @@ export default function SPICONRegistration() {
         </div>
       )}
 
-      {/* SPICON HEADER SECTION */}
+      {/* SPICON HEADER SECTION - EAST */}
       <div className="text-center mb-4">
         <img
           src={logo}
@@ -113,40 +120,39 @@ export default function SPICONRegistration() {
           style={{ width: "120px", marginBottom: "15px" }}
         />
 
-       
-
         <h2 className="fw-bold mb-2">
-          REGISTRATION FOR SPICON 2026 (West Rayalaseema)
+          REGISTRATION FOR SPICON 2026 (East Rayalaseema)
         </h2>
 
+        {/* Venue placeholders kept as user did not provide specific venue info yet */}
         <p className="mb-1">
           <strong>Date:</strong> Jan 11–14, 2026
         </p>
         <p className="mb-1">
-          <strong>Venue:</strong> Seventh-day Adventist High School,
+          <strong>Venue:</strong> [Wisdom CBSE High school],
         </p>
         <p className="mb-3">
-          Duggannagaripalli, Vemula Mandal (Near Vempalli),<br />
-          Kadapa District (Y.S.R. Dist.)
+          [koduru],<br />
+          [annamayya Distric]
         </p>
 
         <hr />
 
         <h5 className="fw-bold mt-3">Who can attend?</h5>
         <ul className="text-start mx-auto" style={{ maxWidth: "800px" }}>
-          <li>Born-again experience, minimum D.T. Camp attendance, and recommendation by senior adviser/district staff.</li>
-          <li>Graduates involved in student ministry with recommendation by EGF Secretary and APEGF staff.</li>
-          <li>Only authenticated registrations will be added to the SPICON-2026 WR Delegates WhatsApp group.</li>
+          <li>Students with Born-again experience, minimum D.T. Camp attendance.</li>
+          <li>Graduates involving in student ministry with recommendation.</li>
+          <li>Only authenticated registrations will be added to the SPICON-2026 East Delegates WhatsApp group.</li>
         </ul>
 
         <p className="fw-bold mt-2">This is a sign that your registration is confirmed.</p>
 
         <p className="mt-3">
           <strong>Last date for registration:</strong><br />
-          Dec 31, 2026 – 6 PM
+          Dec 20, 2025 – 12 PM
         </p>
 
-        <p className="text-danger fw-bold">NOTE: No spot registration will be available.</p>
+        <p className="text-danger fw-bold">NOTE: Spot registrations will not be allowed under any circumstances.</p>
 
         <hr />
 
@@ -162,14 +168,9 @@ export default function SPICONRegistration() {
         <p className="fw-bold mt-3">For any queries, please contact:</p>
 
         <p>
-          <strong>Bro. R. Sudhakar (Tadipatri)</strong><br />
-          9866621304
-        </p>
-
-        <p className="mt-3">
-          Yours in Christ,<br />
-          <strong>Bro. Sudhekar</strong><br />
-          Registrar
+          <strong>M.MAHESH,MPL
+</strong><br />
+          9491383584       
         </p>
 
         <hr className="mb-4" />
@@ -286,7 +287,7 @@ export default function SPICONRegistration() {
           />
         </div>
 
-        {/* DISTRICT */}
+        {/* DISTRICT - Updated with requested districts */}
         <div className="col-md-6">
           <label className="form-label">District *</label>
           <select
@@ -297,14 +298,14 @@ export default function SPICONRegistration() {
             required
           >
             <option value="">Select</option>
-            <option>Anantapur</option>
-            <option>Sri Sathya Sai</option>
-            <option>YSR Kadapa</option>
+            <option>Annamayya</option>
+            <option>Chittoor</option>
+            <option>Tirupati</option>
             <option>Other</option>
           </select>
         </div>
 
-        {/* ICEU / EGF */}
+        {/* ICEU / EGF - Updated and duplicates removed */}
         <div className="col-md-6">
           <label className="form-label">Which ICEU / EGF do you belong to? *</label>
           <select
@@ -315,35 +316,28 @@ export default function SPICONRegistration() {
             required
           >
             <option value="">Choose</option>
-            <option>Anantapur East Zone</option>
-            <option>Anantapur JNTU Zone</option>
-            <option>Badvel</option>
-            <option>Bukkarayasamudram</option>
-            <option>Dharmavaram</option>
-            <option>Gooty</option>
-            <option>Guntakal</option>
-            <option>Hindupur</option>
-            <option>IIIT Idupulapaya</option>
-            <option>Jammalamadugu</option>
-            <option>Kadapa</option>
-            <option>Kadiri</option>
-            <option>Kalyandurg</option>
-            <option>Kamalapuram</option>
-            <option>Lepakshi</option>
-            <option>Madakasira</option>
-            <option>Mydukur</option>
-            <option>Penukonda</option>
-            <option>Proddatur</option>
-            <option>Pulivendula</option>
-            <option>Puttaparthi</option>
-            <option>Rayadurg</option>
-            <option>Rolla</option>
-            <option>Tadpatri</option>
-            <option>Uravakonda</option>
-            <option>Yerraguntla</option>
-            <option>Yogi Vemana University Campus</option>
-            <option>Sri Krishnadevaraya University (SKU)</option>
-            <option>Central University (CU)</option>
+            <option>Koduru</option>
+            <option>Rajampeta</option>
+            <option>Madanapalle</option>
+            <option>Rayachoti</option>
+            <option>Kalikiri</option>
+            <option>Pileru</option>
+            <option>Chittoor</option>
+            <option>Punganoor</option>
+            <option>Palamaneru</option>
+            <option>Kuppam</option>
+            <option>V.Kota</option>
+            <option>Tirupati</option>
+            <option>Renigunta</option>
+            <option>Sattivedu</option>
+            <option>Srikalahasthi</option>
+            <option>Naidupeta</option>
+            <option>Sullurpeta</option>
+            <option>Gudur</option>
+            <option>Venkatagiri</option>
+            <option>Pakala</option>
+            <option>Puttoor</option>
+            <option>IIT-Tirupati</option>
             <option>Other</option>
           </select>
         </div>
@@ -533,23 +527,23 @@ export default function SPICONRegistration() {
             required
           />
         </div>
-        {/* --- NEW ACCOUNT DETAILS SECTION ADDED HERE --- */}
+        
+        {/* --- ACCOUNT DETAILS SECTION (EAST) --- */}
         <div className="col-12 mt-4">
           <hr className="mb-3" />
-          <h5 className="fw-bold mb-3">Account Details</h5>
+          <h5 className="fw-bold mb-3">Account Details (EAST)</h5>
           
           <div className="p-3" style={{ background: "#f8f9fa", borderRadius: "5px" }}>
-            <p className="mb-2"><strong>Account Holder Name :</strong> Mr. Jagatap Jagan</p>
-            <p className="mb-2"><strong>Account No :</strong> 44676705721</p>
-            <p className="mb-2"><strong>IFSC Code :</strong> SBIN0012674</p>
-            <p className="mb-2"><strong>UPI ID :</strong> - </p>
-            <p className="mb-2"><strong>Phone pay/Google Pay Number :</strong> - </p>
-            
+            <p className="mb-2"><strong>Account Holder Name :</strong> Janga Sumalatha</p>
+            <p className="mb-2"><strong>Account No :</strong> 62112258352</p>
+            <p className="mb-2"><strong>IFSC Code :</strong> SBIN0021040</p>
+            <p className="mb-2"><strong>Branch Name :</strong> SBI-NAIDUPET</p>
+            <p className="mb-2"><strong>Phone Pay Number :</strong> 9885108525</p>
           </div>
 
           <hr className="mt-4" />
         </div>
-        {/* --- END OF NEW SECTION --- */}        
+        {/* --- END OF NEW SECTION --- */}       
 
         <div className="col-md-6">
           <label className="form-label">Mode of Payment *</label>
@@ -632,7 +626,7 @@ export default function SPICONRegistration() {
         {/* SUBMIT BUTTON */}
         <div className="col-12 text-center">
           <button className="btn btn-primary px-5" disabled={loading}>
-            {loading ? "Submitting..." : "Submit Registration"}
+            {loading ? "Submitting..." : "Submit Registration (East)"}
           </button>
         </div>
       </form>
