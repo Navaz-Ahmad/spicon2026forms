@@ -168,13 +168,9 @@ export default function EastRegistration() {
           <li>Children above 15 years – ₹500</li>
           <li>Volunteers – ₹200</li>
         </ul>
-        <p>
-  <span className="fw-bold">NOTE:</span>
-</p>
-<ul style={{ listStyle: "none", paddingLeft: 0, marginTop: "-10px" }}>
-  <li>1. Children above 15 years old must be registered separately</li>
-  <li>2. Petitioner should be treated as an employee.</li>
-</ul>
+        <p><span className="fw-bold">NOTE:</span></p>
+        <div>1. Children above 15 years old must be registered separately</div>
+        <div>2. Petitioner should be treated as an employee.</div>
 
         
 
@@ -183,8 +179,8 @@ export default function EastRegistration() {
         <p className="fw-bold mt-3">For any queries, please contact:</p>
 
         <p>
-          <strong>M.MAHESH,MPL
-</strong><br />
+          <strong>M.MAHESH,MPL</strong>
+          <br />
           9491383584       
         </p>
 
