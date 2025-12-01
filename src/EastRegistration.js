@@ -158,12 +158,21 @@ export default function EastRegistration() {
 
         <h5 className="fw-bold">Registration Details</h5>
         <ul className="text-start mx-auto" style={{ maxWidth: "800px" }}>
-          <li>Students & Unemployed – ₹500</li>
-          <li>Employed – ₹1300</li>
-          <li>Families – ₹2500</li>
+          <li>Students – ₹500</li>
+          <li>Unemployed Graduate – ₹500</li>
+          <li>Employed Graduate – ₹1300</li>
+          <li>Graduate Family(Single Employed) – ₹2000</li>
+          <li>Graduate Family(Doubled Employed) – ₹2500</li>
           <li>Children above 15 years – ₹500</li>
-          <li>Volunteers – ₹250</li>
+          <li>Volunteers – ₹200</li>
         </ul>
+         <p>
+  <span className="fw-bold">NOTE:</span> 1. Children above 15 years old must be registered separately
+  <br />
+  2. Petitioner should be treated as an employee.
+</p>
+
+
 
         <p className="fw-bold mt-3">For any queries, please contact:</p>
 
