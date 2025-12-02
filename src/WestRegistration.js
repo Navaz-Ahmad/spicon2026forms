@@ -138,9 +138,9 @@ export default function SPICONRegistration() {
 
         <h5 className="fw-bold mt-3">Who can attend?</h5>
         <ul className="text-start mx-auto" style={{ maxWidth: "800px" }}>
-          <li>Students with Born-again experience, D.T. Camp attended and with recommendation</li>
-          <li>Graduates involving in student ministry and with recommendation.</li>
-          <li>Only authenticated registrations will be added to the SPICON-2026 East Rayalseema Delegates WhatsApp group.</li>
+          <li>Students with Born-again experience, D.T. Camp attended and with recommendation by Senior advisor/district staff</li>
+          <li>Graduates involving in student ministry and with recommendation by Egf secretary/ap Egf staff.</li>
+          <li>Only authenticated registrations will be added to the SPICON-2026 Delegates WhatsApp group.</li>
         </ul>
 
         <p className="fw-bold mt-2">This is a sign that your registration is confirmed.</p>
@@ -400,9 +400,9 @@ export default function SPICONRegistration() {
             required
           >
             <option value="">Choose</option>
-            <option>EGF Secretary/AP EGF staff</option>
-            <option>Senior Advisor/District staff</option>
-            <option>Staff Workerr</option>
+            <option>EGF Secretary</option>
+            <option>Senior Advisor</option>
+            <option>Staff Worker</option>
             <option>District Coordinator</option>
             <option>Regional Coordinator</option>
           </select>
