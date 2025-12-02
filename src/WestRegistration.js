@@ -123,7 +123,7 @@ export default function SPICONRegistration() {
         </h2>
 
         <p className="mb-1">
-          <strong>Dates:</strong> 10<sup>th</sup> 5pm to 13<sup>th</sup> 1:00pm January 2026
+          <strong>Dates:</strong> 11<sup>th</sup> to 14<sup>th</sup> January 2026
 
         </p>
         <p className="mb-1">
@@ -147,7 +147,7 @@ export default function SPICONRegistration() {
 
         <p className="mt-3">
           <strong>Last date for registration:</strong><br />
-          Dec 22, 2025 – 11:59 PM
+          20/12/2025 – 11:59 PM
         </p>
 
         <p className="text-danger fw-bold">NOTE: Spot registrations will not be allowed under any circumstances.</p>
@@ -562,7 +562,7 @@ export default function SPICONRegistration() {
          <p className="mb-2"><strong>Account No :</strong> 44676705721</p>
          <p className="mb-2"><strong>IFSC Code :</strong> SBIN0012674</p>
          <p className="mb-2"><strong>UPI ID :</strong> 7396541571-3@ybl </p>
-        <p className="mb-2"><strong>PhonePe / Google Pay Number :</strong> 73965 41571 </p>
+        <p className="mb-2"><strong>PhonePe / Google Pay Number :</strong><br/> 73965 41571 </p>
 
         {/* QR CODE IMAGES ROW */}
         <div className="d-flex justify-content-center align-items-center gap-4 mt-3">

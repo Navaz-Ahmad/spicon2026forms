@@ -477,7 +477,7 @@ export default function EastRegistration() {
             </div>
 
             <div className="col-md-6">
-              <label className="form-label">Names of children 10-14 years old attending conference SPICON -2026</label>
+              <label className="form-label">Names of children less than 10 years old attending conference SPICON -2026</label>
               <input
                 name="childBelow10Names"
                 className="form-control"
