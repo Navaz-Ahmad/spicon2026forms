@@ -259,7 +259,7 @@ export default function EastRegistration() {
               >
                 <option>Male</option>
                 <option>Female</option>
-                <option>Both</option>
+              
               </select>
             </div>
 
