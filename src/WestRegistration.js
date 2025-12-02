@@ -3,6 +3,9 @@
 
 import React, { useState } from "react";
 import logo from "./Assests/logo.PNG";
+import WestGooglePayQR from "./Assests/west_googlepay.png";
+import WestPhonePayQR from "./Assests/west_phonepay.png";
+
 
 export default function SPICONRegistration() {
   const initial = {
@@ -238,6 +241,34 @@ export default function SPICONRegistration() {
           />
         </div>
 
+                    {/* GENDER */}
+            <div className="col-md-6">
+              <label className="form-label">Gender *</label>
+              <select
+                name="gender"
+                className="form-select"
+                value={form.gender}
+                onChange={handle}
+                required
+              >
+                <option>Male</option>
+                <option>Female</option>
+                <option>Both</option>
+              </select>
+            </div>
+
+            {/* AGE */}
+            <div className="col-md-6">
+              <label className="form-label">Your Age *</label>
+              <input
+                name="age"
+                className="form-control"
+                value={form.age}
+                onChange={handle}
+                required
+              />
+            </div>            
+
         {/* DTC ATTENDED */}
         <div className="col-md-6">
           <label className="form-label">Have you attended DT Camp? *</label>
@@ -411,33 +442,7 @@ export default function SPICONRegistration() {
         {/* FAMILY GROUP CONDITIONAL BLOCK */}
         {form.groupType === "Family" && (
           <>
-            {/* GENDER */}
-            <div className="col-md-6">
-              <label className="form-label">Gender *</label>
-              <select
-                name="gender"
-                className="form-select"
-                value={form.gender}
-                onChange={handle}
-                required
-              >
-                <option>Male</option>
-                <option>Female</option>
-                <option>Both</option>
-              </select>
-            </div>
 
-            {/* AGE */}
-            <div className="col-md-6">
-              <label className="form-label">Your Age *</label>
-              <input
-                name="age"
-                className="form-control"
-                value={form.age}
-                onChange={handle}
-                required
-              />
-            </div>
 
             {/* SPOUSE */}
             <div className="col-md-6">
@@ -547,25 +552,44 @@ export default function SPICONRegistration() {
          <option>Unmarried</option>
          </select>
         </div>
-
-
         {/* --- NEW ACCOUNT DETAILS SECTION ADDED HERE --- */}
         <div className="col-12 mt-4">
-          <hr className="mb-3" />
-          <h5 className="fw-bold mb-3">Account Details</h5>
-          
-          <div className="p-3" style={{ background: "#f8f9fa", borderRadius: "5px" }}>
-            <p className="mb-2"><strong>Account Holder Name :</strong> Mr. Jagatap Jagan</p>
-            <p className="mb-2"><strong>Account No :</strong> 44676705721</p>
-            <p className="mb-2"><strong>IFSC Code :</strong> SBIN0012674</p>
-            <p className="mb-2"><strong>UPI ID :</strong> - </p>
-            <p className="mb-2"><strong>Phone pay/Google Pay Number :</strong> - </p>
-            
-          </div>
+         <hr className="mb-3" />
+         <h5 className="fw-bold mb-3">Account Details</h5>
 
-          <hr className="mt-4" />
+        <div className="p-3" style={{ background: "#f8f9fa", borderRadius: "5px" }}>
+         <p className="mb-2"><strong>Account Holder Name :</strong> Mr. Jagatap Jagan</p>
+         <p className="mb-2"><strong>Account No :</strong> 44676705721</p>
+         <p className="mb-2"><strong>IFSC Code :</strong> SBIN0012674</p>
+         <p className="mb-2"><strong>UPI ID :</strong> 7396541571-3@ybl </p>
+        <p className="mb-2"><strong>PhonePe / Google Pay Number :</strong> 73965 41571 </p>
+
+        {/* QR CODE IMAGES ROW */}
+        <div className="d-flex justify-content-center align-items-center gap-4 mt-3">
+          <div>
+           <img
+            src={WestGooglePayQR}
+            alt="Google Pay QR"
+            style={{ width: "150px", height: "150px", objectFit: "contain" }}
+          />
+          <p className="text-center mt-2 fw-bold">Google Pay</p>
         </div>
-        {/* --- END OF NEW SECTION --- */}        
+
+        <div>
+          <img
+            src={WestPhonePayQR}
+            alt="PhonePe QR"
+            style={{ width: "150px", height: "150px", objectFit: "contain" }}
+          />
+          <p className="text-center mt-2 fw-bold">PhonePe</p>
+        </div>
+      </div>
+    </div>
+
+  <hr className="mt-4" />
+</div>
+{/* --- END OF NEW SECTION --- */}
+     
 
         <p className="text-danger fw-bold mt-3">
   NOTE: Minimum 50% of the total amount must be paid for the registration to be accepted.

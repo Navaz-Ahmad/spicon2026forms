@@ -247,6 +247,33 @@ export default function EastRegistration() {
             required
           />
         </div>
+            {/* GENDER */}
+            <div className="col-md-6">
+              <label className="form-label">Gender *</label>
+              <select
+                name="gender"
+                className="form-select"
+                value={form.gender}
+                onChange={handle}
+                required
+              >
+                <option>Male</option>
+                <option>Female</option>
+                <option>Both</option>
+              </select>
+            </div>
+
+            {/* AGE */}
+            <div className="col-md-6">
+              <label className="form-label">Your Age *</label>
+              <input
+                name="age"
+                className="form-control"
+                value={form.age}
+                onChange={handle}
+                required
+              />
+            </div>        
 
         {/* DTC ATTENDED */}
         <div className="col-md-6">
@@ -410,33 +437,7 @@ export default function EastRegistration() {
         {/* FAMILY GROUP CONDITIONAL BLOCK */}
         {form.groupType === "Family" && (
           <>
-            {/* GENDER */}
-            <div className="col-md-6">
-              <label className="form-label">Gender *</label>
-              <select
-                name="gender"
-                className="form-select"
-                value={form.gender}
-                onChange={handle}
-                required
-              >
-                <option>Male</option>
-                <option>Female</option>
-                <option>Both</option>
-              </select>
-            </div>
 
-            {/* AGE */}
-            <div className="col-md-6">
-              <label className="form-label">Your Age *</label>
-              <input
-                name="age"
-                className="form-control"
-                value={form.age}
-                onChange={handle}
-                required
-              />
-            </div>
 
             {/* SPOUSE */}
             <div className="col-md-6">
